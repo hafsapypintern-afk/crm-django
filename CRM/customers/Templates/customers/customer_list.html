@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Customer List</h1>
+
+<p>
+    <a href="{% url 'add_customer' %}" class="button">
+        Add Customer
+    </a>
+</p>
+
+<table>
+
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Status</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for customer in customers %}
+
+    <tr>
+
+        <td>{{ customer.name }}</td>
+
+        <td>{{ customer.email }}</td>
+
+        <td>{{ customer.phone }}</td>
+
+        <td>
+            {% if customer.is_active %}
+                Active
+            {% else %}
+                Inactive
+            {% endif %}
+        </td>
+
+        <td>
+            <a href="{% url 'customer_detail' customer.id %}">View</a> |
+            <a href="{% url 'update_customer' customer.id %}">Edit</a> |
+            <a href="{% url 'delete_customer' customer.id %}">Delete</a>
+        </td>
+
+    </tr>
+
+    {% empty %}
+
+    <tr>
+        <td colspan="5">
+            No customers found.
+        </td>
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+{% endblock %}
