@@ -28,7 +28,7 @@ def add_customer(request):
     return render(
         request,
         "customers/add_customer.html",
-        {"form": form}
+        {"form": form}  #Send this CustomerForm object to the template under the name form
     )
 
 def customer_detail(request, id):
@@ -52,7 +52,7 @@ def update_customer(request, id):
     else:
         form = CustomerForm(instance=customer)
 
-    return render(
+    return render(    #render() = take a template + data → produce a webpage response for the browser.
         request,
         "customers/update_customer.html",
         {"form": form, "customer": customer}
