@@ -10,6 +10,5 @@ class Customer(models.Model):
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
-
     def __str__(self):
       return self.name
