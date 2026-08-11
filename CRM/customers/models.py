@@ -11,11 +11,5 @@ class Customer(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
 
-def __str__(self):
-    return self.name
-
-class CustomerForm(forms.ModelForm):
-
-    class Meta:
-        model = Customer
-        fields = "__all__"
+    def __str__(self):
+      return self.name
