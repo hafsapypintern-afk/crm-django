@@ -1,19 +1,70 @@
 {% extends "base.html" %}
-{% load static %}
-
 
 {% block content %}
 
-<h2 class="home-title">
-    Welcome to the CRM System
-</h2>
+<div class="home-container">
+
+    <section class="welcome-section">
+
+        <h1>Welcome to the CRM System</h1>
+
+        <p>
+            Manage your customers, orders, and business information
+            efficiently in one place.
+        </p>
+
+        <a href="{% url 'Dashboard' %}" class="home-button">
+            Go to Dashboard
+        </a>
+
+    </section>
 
 
-<p class="home-description">
-    This Customer Relationship Management (CRM) system helps employees
-    manage customer information efficiently.
-</p>
+    <section class="home-cards">
+
+        <div class="home-card">
+            <h2>Customers</h2>
+
+            <p>
+                Manage customer information, contact details,
+                and customer records.
+            </p>
+
+            <a href="{% url 'customer_list' %}" class="button">
+                View Customers
+            </a>
+        </div>
 
 
+        <div class="home-card">
+            <h2>Orders</h2>
+
+            <p>
+                Create and manage customer orders
+                and track their status.
+            </p>
+
+            <a href="{% url 'order_list' %}" class="button">
+                View Orders
+            </a>
+        </div>
+
+
+        <div class="home-card">
+            <h2>Dashboard</h2>
+
+            <p>
+                Get an overview of customers, orders,
+                and pending orders.
+            </p>
+
+            <a href="{% url 'Dashboard' %}" class="button">
+                View Dashboard
+            </a>
+        </div>
+
+    </section>
+
+</div>
 
 {% endblock %}

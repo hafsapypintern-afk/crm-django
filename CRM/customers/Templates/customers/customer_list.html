@@ -39,10 +39,18 @@
         </td>
 
         <td>
-            <a href="{% url 'customer_detail' customer.id %}">View</a> |
-            <a href="{% url 'update_customer' customer.id %}">Edit</a> |
-            <a href="{% url 'delete_customer' customer.id %}">Delete</a>
-        </td>
+    <a href="{% url 'customer_detail' customer.id %}" class="action-button view-button">
+        View
+    </a>
+
+    <a href="{% url 'update_customer' customer.id %}" class="action-button edit-button">
+        Edit
+    </a>
+
+    <a href="{% url 'delete_customer' customer.id %}" class="action-button delete-button">
+        Delete
+    </a>
+</td>
 
     </tr>
 
