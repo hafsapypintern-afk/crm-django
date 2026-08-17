@@ -33,18 +33,14 @@ def login_view(request):
         username = request.POST["username"]
         password = request.POST["password"]
 
-        user = authenticate(
-            request,
-            username=username,
-            password=password
-        )
+        user = authenticate(request, username=username, password=password)
 
         if user is not None:
             login(request, user)
 
             return redirect("Dashboard")
 
-    return render(request, "Login.html")
+    return render(request, "login.html", {"error": "Invalid username or password"})
 
 def register(request):
 
