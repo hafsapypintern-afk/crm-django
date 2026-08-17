@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'orders/style.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="orders-container">
+
+    <h1>Orders</h1>
+
+    <a class="add-order-btn" href="{% url 'add_order' %}"> Add Order </a>
+
+    {% for order in orders %}
+
+        <div class="order-card">
+
+            <h3>Order #{{ order.id }}</h3>
+
+            <p>Product: {{ order.product }}</p>
+            <p>Quantity: {{ order.quantity }}</p>
+            <p>Price: {{ order.price }}</p>
+
+            <div class="order-actions">
+
+                <a href="{% url 'order_detail' order.id %}">
+                    View
+                </a>
+
+                <a href="{% url 'update_order' order.id %}">
+                    Update
+                </a>
+
+                <a href="{% url 'delete_order' order.id %}">
+                    Delete
+                </a>
+
+            </div>
+
+        </div>
+
+    {% empty %}
+
+        <p>No orders found.</p>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

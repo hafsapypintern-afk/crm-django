@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Order #{{ order.id }}</h1>
+
+<p>Product: {{ order.product }}</p>
+<p>Quantity: {{ order.quantity }}</p>
+<p>Price: {{ order.price }}</p>
+
+<a href="{% url 'order_list' %}">Back to Orders</a>
+
+<a href="{% url 'update_order' order.id %}">Update</a>
+
+<a href="{% url 'delete_order' order.id %}">Delete</a>
+
+{% endblock %}

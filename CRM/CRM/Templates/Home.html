@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="home-container">
+
+    <section class="welcome-section">
+
+        <h1>Welcome to the CRM System</h1>
+
+        <p>
+            This Customer Relationship Management system helps you
+            manage customers and orders efficiently in one place.
+        </p>
+
+        <p>
+            Please login or create an account to access the CRM
+            dashboard and manage your business information.
+        </p>
+
+        <div class="home-actions">
+
+            <a href="{% url 'Login' %}" class="button">
+                Login
+            </a>
+
+            <a href="{% url 'Register' %}" class="button">
+                Register
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <section class="home-cards">
+
+        <div class="home-card">
+
+            <h2>Customers</h2>
+
+            <p>
+                Add, view, update, and manage your customer
+                information.
+            </p>
+
+        </div>
+
+
+        <div class="home-card">
+
+            <h2>Orders</h2>
+
+            <p>
+                Manage customer orders and keep track of
+                your order information.
+            </p>
+
+        </div>
+
+
+        <div class="home-card">
+
+            <h2>Dashboard</h2>
+
+            <p>
+                View important CRM information such as total
+                customers, total orders, and pending orders.
+            </p>
+
+        </div>
+
+    </section>
+
+</div>
+
+{% endblock %}
