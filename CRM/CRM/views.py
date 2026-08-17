@@ -1,13 +1,15 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from customers.models import Customer
 from Orders.models import Order
+from django.contrib.auth.decorators import login_required
 
 def Home(request):
     return render(request, 'Home.html')
 
+@login_required
 def Dashboard(request):
     total_customers = Customer.objects.count()
     total_orders = Order.objects.count()
@@ -40,7 +42,7 @@ def login_view(request):
         if user is not None:
             login(request, user)
 
-            return redirect("Home")
+            return redirect("Dashboard")
 
     return render(request, "Login.html")
 
@@ -61,3 +63,7 @@ def register(request):
         return redirect("Home")
 
     return render(request, "Register.html")
+
+def logout_view(request):
+    logout(request)
+    return redirect("Home")

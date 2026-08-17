@@ -120,3 +120,5 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / "CRM" / "static",
 ]
+
+LOGIN_URL = "Login"

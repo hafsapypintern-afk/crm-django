@@ -9,13 +9,26 @@
         <h1>Welcome to the CRM System</h1>
 
         <p>
-            Manage your customers, orders, and business information
-            efficiently in one place.
+            This Customer Relationship Management system helps you
+            manage customers and orders efficiently in one place.
         </p>
 
-        <a href="{% url 'Dashboard' %}" class="home-button">
-            Go to Dashboard
-        </a>
+        <p>
+            Please login or create an account to access the CRM
+            dashboard and manage your business information.
+        </p>
+
+        <div class="home-actions">
+
+            <a href="{% url 'Login' %}" class="button">
+                Login
+            </a>
+
+            <a href="{% url 'Register' %}" class="button">
+                Register
+            </a>
+
+        </div>
 
     </section>
 
@@ -23,44 +36,38 @@
     <section class="home-cards">
 
         <div class="home-card">
+
             <h2>Customers</h2>
 
             <p>
-                Manage customer information, contact details,
-                and customer records.
+                Add, view, update, and manage your customer
+                information.
             </p>
 
-            <a href="{% url 'customer_list' %}" class="button">
-                View Customers
-            </a>
         </div>
 
 
         <div class="home-card">
+
             <h2>Orders</h2>
 
             <p>
-                Create and manage customer orders
-                and track their status.
+                Manage customer orders and keep track of
+                your order information.
             </p>
 
-            <a href="{% url 'order_list' %}" class="button">
-                View Orders
-            </a>
         </div>
 
 
         <div class="home-card">
+
             <h2>Dashboard</h2>
 
             <p>
-                Get an overview of customers, orders,
-                and pending orders.
+                View important CRM information such as total
+                customers, total orders, and pending orders.
             </p>
 
-            <a href="{% url 'Dashboard' %}" class="button">
-                View Dashboard
-            </a>
         </div>
 
     </section>
